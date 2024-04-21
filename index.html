@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./Logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        let input = document.getElementById('inputBox');
+        let buttons = document.querySelectorAll('button');
+
+        let string = "";
+        let arr = Array.from(buttons);
+        arr.forEach(button => {
+            button.addEventListener('click', (e) => {
+                if (e.target.innerHTML == '=') {
+                    string = eval(string);
+                    input.value = string;
+                }
+
+                else if (e.target.innerHTML == 'AC') {
+                    string = "";
+                    input.value = string;
+                }
+                else if (e.target.innerHTML == 'DEL') {
+                    string = string.substring(0, string.length - 1);
+                    input.value = string;
+                }
+                else {
+                    string += e.target.innerHTML;
+                    input.value = string;
+                }
+
+            })
+        })
+    </script>
+    <title>Calculator</title>
+</head>
+
+<body
+    class="w-full h-screen flex justify-center items-center bg-gradient-to-r from-[#20f5d1] from-50% to-[#bce1f5] to-100%">
+    <div
+        class="container border shadow-[0px_3px_15px_rgba(113,115,119,0.5)] bg-[#29a298] p-5 rounded-2xl border-solid border-[#0055ff] w-96 mx-auto">
+        <input type="text" id="inputBox" placeholder="0"
+            class="w-80 shadow-[0px_3px_15px_rgbs(84,84,84,0.1)] text-[40px] text-right cursor-pointer text-[#2200ff] bg-[cyan] m-2.5 p-6 rounded-[10px] border-[none]" />
+        <div>
+            <button
+                class="w-[60px] h-[60px] text-[#009dff] text-xl shadow-[-8px_-8px_15px_rgba(255,255,255,0.1)] cursor-pointer bg-[blue] m-2.5 rounded-[50%] border-[none] text-[#0aeeb9]">AC</button>
+            <button
+                class="w-[60px] h-[60px] text-[#009dff] text-xl shadow-[-8px_-8px_15px_rgba(255,255,255,0.1)] cursor-pointer bg-[blue] m-2.5 rounded-[50%] border-[none] text-[#0aeeb9]">DEL</button>
+            <button
+                class="w-[60px] h-[60px] text-[#009dff] text-xl shadow-[-8px_-8px_15px_rgba(255,255,255,0.1)] cursor-pointer bg-[blue] m-2.5 rounded-[50%] border-[none] text-[#0aeeb9]">%</button>
+            <button
+                class="w-[60px] h-[60px] text-[#009dff] text-xl shadow-[-8px_-8px_15px_rgba(255,255,255,0.1)] cursor-pointer bg-[blue] m-2.5 rounded-[50%] border-[none] text-[#0aeeb9]">/</button>
+        </div>
+
+        <div>
+            <button
+                class="w-[60px] h-[60px] text-[#009dff] text-xl shadow-[-8px_-8px_15px_rgba(255,255,255,0.1)] cursor-pointer bg-[blue] m-2.5 rounded-[50%] border-[none]">7</button>
+            <button
+                class="w-[60px] h-[60px] text-[#009dff] text-xl shadow-[-8px_-8px_15px_rgba(255,255,255,0.1)] cursor-pointer bg-[blue] m-2.5 rounded-[50%] border-[none]">8</button>
+            <button
+                class="w-[60px] h-[60px] text-[#009dff] text-xl shadow-[-8px_-8px_15px_rgba(255,255,255,0.1)] cursor-pointer bg-[blue] m-2.5 rounded-[50%] border-[none]">9</button>
+            <button
+                class="w-[60px] h-[60px] text-[#009dff] text-xl shadow-[-8px_-8px_15px_rgba(255,255,255,0.1)] cursor-pointer bg-[blue] m-2.5 rounded-[50%] border-[none] text-[#0aeeb9]">*</button>
+        </div>
+
+        <div>
+            <button
+                class="w-[60px] h-[60px] text-[#009dff] text-xl shadow-[-8px_-8px_15px_rgba(255,255,255,0.1)] cursor-pointer bg-[blue] m-2.5 rounded-[50%] border-[none]">4</button>
+            <button
+                class="w-[60px] h-[60px] text-[#009dff] text-xl shadow-[-8px_-8px_15px_rgba(255,255,255,0.1)] cursor-pointer bg-[blue] m-2.5 rounded-[50%] border-[none]">5</button>
+            <button
+                class="w-[60px] h-[60px] text-[#009dff] text-xl shadow-[-8px_-8px_15px_rgba(255,255,255,0.1)] cursor-pointer bg-[blue] m-2.5 rounded-[50%] border-[none]">6</button>
+            <button
+                class="w-[60px] h-[60px] text-[#009dff] text-xl shadow-[-8px_-8px_15px_rgba(255,255,255,0.1)] cursor-pointer bg-[blue] m-2.5 rounded-[50%] border-[none] text-[#0aeeb9]">-</button>
+        </div>
+
+        <div>
+            <button
+                class="w-[60px] h-[60px] text-[#009dff] text-xl shadow-[-8px_-8px_15px_rgba(255,255,255,0.1)] cursor-pointer bg-[blue] m-2.5 rounded-[50%] border-[none]">1</button>
+            <button
+                class="w-[60px] h-[60px] text-[#009dff] text-xl shadow-[-8px_-8px_15px_rgba(255,255,255,0.1)] cursor-pointer bg-[blue] m-2.5 rounded-[50%] border-[none]">2</button>
+            <button
+                class="w-[60px] h-[60px] text-[#009dff] text-xl shadow-[-8px_-8px_15px_rgba(255,255,255,0.1)] cursor-pointer bg-[blue] m-2.5 rounded-[50%] border-[none]">3</button>
+            <button
+                class="w-[60px] h-[60px] text-[#009dff] text-xl shadow-[-8px_-8px_15px_rgba(255,255,255,0.1)] cursor-pointer bg-[blue] m-2.5 rounded-[50%] border-[none] text-[#0aeeb9]">+</button>
+        </div>
+
+        <div>
+            <button
+                class="w-[60px] h-[60px] text-[#009dff] text-xl shadow-[-8px_-8px_15px_rgba(255,255,255,0.1)] cursor-pointer bg-[blue] m-2.5 rounded-[50%] border-[none]">00</button>
+            <button
+                class="w-[60px] h-[60px] text-[#009dff] text-xl shadow-[-8px_-8px_15px_rgba(255,255,255,0.1)] cursor-pointer bg-[blue] m-2.5 rounded-[50%] border-[none]">0</button>
+            <button
+                class="w-[60px] h-[60px] text-[#009dff] text-xl shadow-[-8px_-8px_15px_rgba(255,255,255,0.1)] cursor-pointer bg-[blue] m-2.5 rounded-[50%] border-[none]">.</button>
+            <button
+                class="w-[60px] h-[60px] text-[#009dff] text-xl shadow-[-8px_-8px_15px_rgba(255,255,255,0.1)] cursor-pointer m-2.5 rounded-[50%] border-[none] bg-[#91e858] text-[blue]">=</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
